@@ -1,0 +1,103 @@
+h2 {
+    color:#14305e;
+}
+
+pre {
+    background-color: #eeeeee;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+}
+
+pre {
+    font-family: 'Courier New', monospace;
+}
+
+#boxmodel-img {
+    display: block;
+
+    padding: 1em;
+    margin: auto;
+    border: 1px solid black;
+}
+
+header, section, pre {
+    padding: 1em;
+}
+
+main {
+    max-width: 50em;
+    margin: auto;
+}
+
+.inline-divs {
+    display: inline;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    border-bottom: 1px solid black;
+    z-index: 1;
+}
+
+#smiley {
+    position: relative;
+    left: 400px;
+}
+
+a:hover {
+    color: lightblue;
+}
+
+#carousel-div-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.carousel-div {
+    padding: 1em;
+    border: 1px solid black;
+    width: 100px;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    background-image: url('./mountains.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 6em;
+}
+
+nav {
+    background-color: black;
+}
+
+nav a {
+    display: inline-block;
+    padding: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.header-title {
+    padding: 1em;
+    background: #fafafa;
+    opacity: 0.9;
+    max-width: 50em;
+    margin: auto;
+}
+
+section {
+    padding-top: 40px;
+    margin-top: -40px;
+}

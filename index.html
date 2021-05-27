@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My first webpage</title>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<header>
+			<div class="header-title">
+				<h1>
+					My first website
+				</h1>
+				<p>
+					A website built to learn HTML and CSS
+				</p>
+			</div>
+		</header>
+		<nav>
+			<a href="#colors">Colors</a>
+			<a href="#fonts">Fonts</a>
+			<a href="#boxmodel">Box model</a>
+			<a href="#maxwidth">Max-width</a>
+			<a href="#blockinline">Block/Inline</a>
+			<a href="#position">Position</a>
+			<a href="#hover">Hover</a>
+			<a href="#flexbox">Flexbox</a>
+		</nav>
+		<main>
+			<section id="colors">
+				<h2>
+					Colors
+				</h2>
+				<p>
+					The first thing we will do is <strong>change the 
+					colors</strong> of the headers to our favorite color.
+				</p>
+				<pre>
+h2 {
+	color: #14305e;
+}				</pre>
+				<p>
+					We can also add a <strong>background color</strong> to elements. I will make
+					the background of code snippets to be grey, as such:
+				</p>
+				<pre>
+pre {
+	background-color: #eeeeee
+}				</pre>
+			</section>
+			<section id="fonts">
+				<h2>
+					Fonts
+				</h2>
+				<p>
+					We can also choose <strong>specific fonts</strong> for specific content.
+				</p>
+				<pre>
+body {
+	font-family: Helvetica, sans-serif;
+}
+pre {
+	font-family: 'Courier New', monospace;
+}				</pre>
+			</section>
+
+			<section id="boxmodel">
+				<h2>
+					Box model (padding, margin, border, outline)
+				</h2>
+				<p>
+					Div's represent blocks of content. We can add <strong>spacing around them</strong>
+					in many different ways, such as padding and margin. We can also 
+					identify them with a border or an outline. The difference between these
+					is shown in the <strong>box model diagram</strong> below.
+				</p>
+				<img id="boxmodel-img" src="./boxmodel.gif" width="400px">
+				<pre>
+#boxmodel {
+	display: block;
+
+	padding: 2em;
+	margin: auto;
+	border: 1px solid black;
+}
+header, section, pre {
+	padding: 1em;
+}				</pre>
+			</section>
+			<section id="maxwidth">
+				<h2>
+					Max-width
+				</h2>
+				<p>
+					A common way to make a website more readable these days is to limit
+					the <strong>max width</strong> of a website. This makes it easier to read. We can 
+					do that as such:
+				</p>
+				<pre>
+main {
+	margin: auto;
+}
+main {
+	max-width: 50em;
+}				</pre>
+			</section>
+			<section  id="blockinline">
+				<h2>
+					Block vs inline elements
+				</h2>
+				<p>
+					<strong>Block elements</strong> <em>start on new lines, and take up the full width.</em>
+					<strong>Inline elements</strong> <em>take up only as much width as necessary. Many inline elements can 
+					be placed beside one another.</em>
+				</p>
+				<p>
+					HTML Div elements are block elements.
+					HTML Span elements are inline elements by default.
+				</p>
+				<p>
+					We can also specify the behavior that we want using CSS 'display' property as such:
+				</p>
+				<div class="inline-divs">
+					Example of 
+				</div>
+				<div class="inline-divs">
+					divs with 'display inline'
+				</div>
+				<pre>
+.inline-divs {
+	display: inline;
+}				</pre>
+			</section>
+			<section id="position">
+				<h2>
+					Position
+				</h2>
+				<p>
+					We can also <strong>specify the position of an element</strong> on the page. We can use position, 
+					in conjunction with top and left to specify the position of an element. 
+
+					This allows us to have interesting designs for our page.
+				</p>
+				<p>
+					A common example is to make the header stickied to the top of the page.
+					We can do that as such:
+				</p>
+				<pre>
+header {
+	position: sticky;
+	top: 0;
+	background-color: white;
+	border-bottom: 1px solid black;
+}				</pre>
+				<p>
+					We could also place an image to the right within a div by doing so:
+				</p>
+				<div class="image-containing-div">
+					<img id="smiley" src="Smiling_Face_Emoji_grande.png" width="100px">
+				</div>
+				<pre>
+#smiley {
+	position: relative;
+	left: 400px;
+}				</pre>
+				<p>
+					Note that the smiley is now 'over' the header when we scroll, which is odd.
+					We'll adjust this by making the 'depth', otherwise know as the 'z-index'
+					of the header to 1. This will put the header 'on top' of other elements.
+				</p>
+				<pre>
+nav {
+	z-index: 1;
+}				</pre>
+			</section>
+			<section  id="hover">
+				<h2>
+					Hover
+				</h2>
+				<p>
+					We can add specific styling <strong>upon hover only.</strong>
+					I want my links to be light-green when hovered over.
+					We can do that by specifying the tag, along with the 
+					:hover pseudo-class.
+				</p>
+				<pre>
+a:hover {
+	color: light-green;
+}				</pre>
+			</section>
+			<section  id="flexbox">
+				<h2>
+					Flexbox
+				</h2>
+				<p>
+					A modern property that helps us make 
+					complex arrangements of divs is called flexbox.
+					It allows us to place divs horizontally, one after the other.
+					Here is an example of what flexbox can let us do.
+				</p>
+				<div id="carousel-div-container">
+					<div class="carousel-div">
+						<h3>Hello</h3>
+					</div>
+					<div class="carousel-div">
+						<h3>there...</h3>
+					</div>
+					<div class="carousel-div">
+						<h3>General</h3>
+					</div>
+					<div class="carousel-div">
+						<h3>Kenobi!</h3>
+					</div>
+				</div>
+				<pre>
+.carousel-div-container {
+	display: flex;
+
+}
+.carousel-div {
+	padding: 1em;
+	border: 1px solid black;
+	width: 100px;
+}				</pre>
+			</section>
+			<section  id="polish">
+				<h2>
+					A few polishing touches
+				</h2>
+				<p>
+					We'll add a few polishing touches, including images,
+					changing the colors and padding of certain elements.
+				</p>
+
+				<pre>
+body {
+	margin: 0;
+}
+header {
+	background-image: url('./mountains.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding: 6em;
+}
+nav {
+	background-color: black;
+}
+nav a{
+	display: inline-block;
+	padding: 1em;
+}
+.header-title {
+	padding: 1em;
+	background: #fafafa;
+	opacity: 0.9;
+	max-width: 50em;
+	margin: auto;
+}
+a{
+	color: white;
+	text-decoration: none;
+}
+main {
+	margin: auto;
+}
+main {
+	max-width: 50em;
+}
+section {
+	padding-top: 40px;
+	margin-top: -40px;
+}				</pre>
+			</section>
+		</main>
+		<footer>
+			<section>
+				Created by ThomsProjects
+			</section>
+		</footer>
+	</body>
+</html>
